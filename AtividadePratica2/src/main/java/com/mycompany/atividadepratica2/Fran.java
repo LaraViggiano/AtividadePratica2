@@ -20,7 +20,10 @@ public class Franc {
     public boolean equals(Object object) {					
        Franc franc = (Franc) object;      
        return amount == franc.amount;					
-     }					
+     }
+     Money times(int multiplier)  {
+      return new Franc(amount * multiplier);
+   }
 }
 
 }

@@ -24,6 +24,10 @@ public class Dolar {
    Dollar dollar = (Dollar) object;
    return amount == dollar.amount;
 }
+   Money times(int multiplier)  {
+      return new Dollar(amount * multiplier);
+   }								
+}
 }
 
     
