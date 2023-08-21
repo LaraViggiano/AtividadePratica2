@@ -10,7 +10,11 @@ package com.mycompany.atividadepratica2;
  */
 public class Franc {
     class Franc {   
-   private int amount;					
+   private int amount;	
+   Franc(int amount) {
+      this.amount = amount;
+      currency = "CHF"; 
+   }
    Franc(int amount) {      
       this.amount= amount;
     }					
@@ -24,6 +28,18 @@ public class Franc {
      Money times(int multiplier)  {
       return new Franc(amount * multiplier);
    }
+      String currency() {
+      return "CHF";
+   }
+      Money times(int multiplier)  {
+      return Money.franc(amount * multiplier);
+   }
 }
-
+class Franc extends Money {
+	
+   Franc(int amount, String currency) {
+      this.amount = amount;
+      this.currency = currency;
+   }
+}
 }

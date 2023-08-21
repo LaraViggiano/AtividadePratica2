@@ -11,6 +11,10 @@ package com.mycompany.atividadepratica2;
 public class Dolar {
     class Dollar {
    private int amount;
+   Dollar(int amount)  {
+      this.amount = amount;
+      currency = "USD";
+   }
    Dollar(int amount) {
       this.amount= amount;
    }
@@ -26,10 +30,19 @@ public class Dolar {
 }
    Money times(int multiplier)  {
       return new Dollar(amount * multiplier);
-   }								
+   }		
+   String currency() {
+       return "USD";
+    }
+    Money times(int multiplier)  {
+      return Money.dollar(amount * multiplier);
+   }
 }
+ class Dollar extends Money {
+	
+   Dollar(int amount, String currency)  {
+      this.amount = amount;
+      this.currency = currency;
+   }
 }
-
-    
-    
 }
